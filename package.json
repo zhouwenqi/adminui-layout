@@ -1,0 +1,62 @@
+{
+  "name": "@adminui-dev/layout",
+  "version": "1.0.2",
+  "description": "adminui.dev's layout",
+  "keywords": [
+    "layout",
+    "adminui",
+    "admin",
+    "dashboard"
+  ],
+  "license": "MIT",
+  "author": "zhouwenqi",
+  "type": "commonjs",
+  "publishConfig": {
+    "access": "public"
+  },
+  "module": "./dist/index.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs.js",
+  "types": "./dist/index.d.ts",
+  "authors": [
+    "zhouwenqi <zhouwenqi1982@live.com>"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "tslib": "^2.6.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/commander": "^2.12.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "postcss": "^8.5.6",
+    "postcss-modules": "^6.0.1",
+    "rollup": "^4.0.0",
+    "rollup-plugin-dts": "^6.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^5.0.3"
+  },
+  "peerDependencies": {
+    "react": ">=19.2.0",
+    "react-dom": ">=19.2.0"
+  }
+}
