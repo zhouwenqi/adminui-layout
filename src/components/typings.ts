@@ -40,12 +40,15 @@ interface LayoutConfig  {
     menuIconSize?:number,
     compact?:boolean,
     splitMenu?:boolean,
+    asideMenuInline?:boolean,
+    asideMenuGroup?:boolean, 
     hideBorder?:boolean,
     hideTitle?:boolean,
     hideFooter?:boolean,
     hideBreadcrumb?:boolean,
+    asideTransparent?:boolean,
+    headerTransparent?:boolean
     containerTransparent?:boolean,
-
     userInfo?:UserInfo,
     brandInfo?:BrandInfo
 }
@@ -130,7 +133,7 @@ interface RootLayoutProps<T> extends LayoutProps{
 interface ContainerProps extends LayoutProps {
     mode?:ContainerMode,
     stretch?:ContainerStretch,
-    bordered?:boolean,
+    hideBorder?:boolean,
     hideTitle?:boolean,
     hideBreadcrumb?:boolean,
     hideFooter?:boolean,
