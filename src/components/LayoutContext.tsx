@@ -19,9 +19,9 @@ export const defaultSkinData:ThemeSkin = {
 
 export const defaultConfig:LayoutConfig = {
     headerHeight:50,
-    asideCollapsedWidth:52,
     asideWidth:260,
     layoutType:"leftMenu",
+    collapsedPosition:"bottom",
     theme:"system",
     primaryColor:"#417ffb",
     skinName:defaultSkinData.name

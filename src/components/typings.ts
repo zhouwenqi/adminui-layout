@@ -4,6 +4,7 @@ type LayoutTheme = 'light' | 'dark'
 type ContainerMode = 'inline' | 'box' | 'panel' 
 type ContainerStretch = 'inline' | 'auto' | 'fill'
 type SkinType = 'tidy' | 'rich'
+type Position = "top" | "center" | "bottom"
 
 type ConfigStateDispatcher = {
     layoutConfig:LayoutConfig,    
@@ -28,8 +29,7 @@ type OutletContainer = {
 interface LayoutConfig  {
     layoutType?:LayoutType,    
     headerHeight?:number,
-    asideWidth?:number,
-    asideCollapsedWidth?:number,    
+    asideWidth?:number, 
     theme?:Theme,    
     locale?:string,
     disabledLocale?:boolean,
@@ -39,6 +39,7 @@ interface LayoutConfig  {
     flated?:boolean,
     menuIconSize?:number,
     compact?:boolean,
+    largeBrand?:boolean,
     splitMenu?:boolean,
     asideMenuInline?:boolean,
     asideMenuGroup?:boolean, 
@@ -49,6 +50,7 @@ interface LayoutConfig  {
     asideTransparent?:boolean,
     headerTransparent?:boolean
     containerTransparent?:boolean,
+    collapsedPosition?:Position,
     userInfo?:UserInfo,
     brandInfo?:BrandInfo
 }
@@ -88,7 +90,7 @@ interface UserInfo {
     id?:number,
     uid:string,
     title:string,
-    avatar?:string,
+    avatar?:string | React.ReactNode,
 }
 
 // brand info
@@ -96,7 +98,8 @@ interface BrandInfo {
     id?:number,
     name:string,
     title:string,
-    logo?:React.ReactNode
+    url?:string,
+    logo?:string | React.ReactNode
 }
 
 interface MenuData {
@@ -115,7 +118,6 @@ interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 // base layout properties
 interface BaseLayoutProps extends LayoutProps{
-    headerHeight:number,
     ref?:React.Ref<HTMLDivElement>
 }
 
@@ -161,5 +163,6 @@ export type {
     SkinType,
     ThemeSkin,
     MenuData,
+    Position,
     OutletContainer
 }

@@ -33,19 +33,17 @@ function BaseLayout(props:BaseLayoutProps){
         } 
         
     })
-    
-    const rootLayoutStyles = {
-        gridTemplateRows: `${props.headerHeight}px 1fr`,
-    }
-
+  
     return(      
         <>  
         <div ref={props.ref} className={styles.rootBox} style={{...props.style}}>
             <LayoutBackground />            
-            <div className={styles.rootLayout} style={rootLayoutStyles}>
+            <div className={styles.rootLayout}>
                 {asideElement}
-                {headerElement}          
-                {contentElement}
+                <div className={styles.mainLayout}>                
+                    {headerElement}          
+                    {contentElement}
+                </div>
             </div>        
         </div>        
         </>

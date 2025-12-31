@@ -3,9 +3,9 @@ import { LAYOUT_CONTENT_KEY } from './LayoutContext'
 
 function LayoutContent(props:React.HTMLAttributes<HTMLDivElement>){    
     return(
-        <div className={styles.mainLayout} {...props}>
-            {props.children}
-        </div>
+        <>
+        {props.children}
+        </>
     )
 }
 LayoutContent.displayName = "LayoutContent"
