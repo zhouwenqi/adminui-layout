@@ -5,6 +5,7 @@ type ContainerMode = 'inline' | 'box' | 'panel'
 type ContainerStretch = 'inline' | 'auto' | 'fill'
 type SkinType = 'tidy' | 'rich'
 type Position = "top" | "center" | "bottom"
+type AvatarPosition = "rightTop" | "leftBottom" | "none"
 
 type ConfigStateDispatcher = {
     layoutConfig:LayoutConfig,    
@@ -51,6 +52,7 @@ interface LayoutConfig  {
     headerTransparent?:boolean
     containerTransparent?:boolean,
     collapsedPosition?:Position,
+    avatarPosition?:AvatarPosition,
     userInfo?:UserInfo,
     brandInfo?:BrandInfo
 }
@@ -164,5 +166,6 @@ export type {
     ThemeSkin,
     MenuData,
     Position,
+    AvatarPosition,
     OutletContainer
 }

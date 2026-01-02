@@ -22,6 +22,7 @@ export const defaultConfig:LayoutConfig = {
     asideWidth:260,
     layoutType:"leftMenu",
     collapsedPosition:"bottom",
+    avatarPosition:"rightTop",
     theme:"system",
     primaryColor:"#417ffb",
     skinName:defaultSkinData.name

@@ -1,6 +1,6 @@
 {
   "name": "@adminui-dev/layout",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "adminui.dev's layout",
   "keywords": [
     "layout",
@@ -8,6 +8,7 @@
     "admin",
     "dashboard"
   ],
+  
   "license": "MIT",
   "author": "zhouwenqi",
   "type": "commonjs",
@@ -30,6 +31,11 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouwenqi/adminui-layout.git"
+  },
+  "homepage": "https://demo.adminui.dev",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
