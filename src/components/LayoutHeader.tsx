@@ -1,5 +1,10 @@
 import { LAYOUT_HEADER_KEY } from "./LayoutContext"
 
+/**
+ * Header for layout
+ * @param props 
+ * @returns 
+ */
 function LayoutHeader(props:React.HTMLAttributes<HTMLDivElement>){
     return(
         <>

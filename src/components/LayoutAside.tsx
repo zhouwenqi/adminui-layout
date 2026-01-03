@@ -1,5 +1,10 @@
 import { LAYOUT_ASIDE_KEY } from "./LayoutContext"
 
+/**
+ * Aside for layout
+ * @param props 
+ * @returns 
+ */
 function LayoutAside(props:React.HTMLAttributes<HTMLDivElement>){
     return(
         <>

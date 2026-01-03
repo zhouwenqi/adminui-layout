@@ -1,6 +1,9 @@
-import styles from './Layout.module.css'
 import { LAYOUT_CONTENT_KEY } from './LayoutContext'
-
+/**
+ * Content for layout
+ * @param props 
+ * @returns 
+ */
 function LayoutContent(props:React.HTMLAttributes<HTMLDivElement>){    
     return(
         <>

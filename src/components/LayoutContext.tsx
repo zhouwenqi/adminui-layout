@@ -9,13 +9,7 @@ export function defineConfig(config:LayoutConfig):LayoutConfig {
 export const LAYOUT_ASIDE_KEY = Symbol("LayoutAside")
 export const LAYOUT_CONTENT_KEY = Symbol("LayoutContent")
 export const LAYOUT_HEADER_KEY = Symbol("LayoutHeader")
-
-export const defaultSkinData:ThemeSkin = {
-    icon:"",
-    name:"default",
-    themeType:"tidy",
-    theme:['light','dark']    
-}
+export const LAYOUT_BACKGROUND_KEY = Symbol("LayoutBackground")
 
 export const defaultConfig:LayoutConfig = {
     headerHeight:50,
@@ -25,7 +19,6 @@ export const defaultConfig:LayoutConfig = {
     avatarPosition:"rightTop",
     theme:"system",
     primaryColor:"#417ffb",
-    skinName:defaultSkinData.name
 }
 
 const LayoutActionContext = createContext<ConfigActionDispatcher>({
@@ -39,7 +32,6 @@ const LayoutStateContext = createContext<ConfigStateDispatcher>({
     languages:[],
     theme:"system",
     layoutConfig:{},
-    themeSkin:defaultSkinData,
     themeSkinMap:{"tidy":[],"rich":[]}
 })
 

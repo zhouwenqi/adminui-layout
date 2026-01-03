@@ -11,9 +11,10 @@ type ConfigStateDispatcher = {
     layoutConfig:LayoutConfig,    
     locale:string,
     theme:Theme,
-    themeSkin:ThemeSkin,
+    themeSkin?:ThemeSkin,
     themeSkinMap:Record<SkinType,ThemeSkin[]>,
-    languages:Language[]
+    languages:Language[],
+    menuDataMap?:Record<string,MenuData[]>
 }
 type ConfigActionDispatcher = {
     setTheme:(theme:Theme)=>void,
@@ -51,6 +52,9 @@ interface LayoutConfig  {
     asideTransparent?:boolean,
     headerTransparent?:boolean
     containerTransparent?:boolean,
+    asideBlur?:boolean,
+    headerBlur?:boolean,
+    containerBlur?:boolean,
     collapsedPosition?:Position,
     avatarPosition?:AvatarPosition,
     userInfo?:UserInfo,
@@ -60,15 +64,18 @@ interface LayoutConfig  {
 // skin
 interface ThemeSkin {
     name:string,
-    icon:string,
+    icon?:string,
     label?:string,
     theme:LayoutTheme[],
-    themeType:SkinType,
+    skinType:SkinType,
+    backgroundContent?:React.ReactNode,    
     asideWidth?:number,
     primaryColor?:string,
-    asideCollapsedWidth?:number,  
+    asideBlur?:boolean,
+    headerBlur?:boolean,
+    containerBlur?:boolean,
     layoutBorderColor?:string,
-    headerStyle?:React.CSSProperties,
+    headerStyle?:React.CSSProperties,    
     asideStyle?:React.CSSProperties,    
 }
 
@@ -110,7 +117,7 @@ interface MenuData {
     label?:string,
     icon?:React.ReactNode,
     path?:string,
-    extra?:React.ReactNode;
+    extra?:React.ReactNode,
     originalPath?:string,
     params?:Record<string,string>,
     children?:MenuData[]   
@@ -126,7 +133,7 @@ interface BaseLayoutProps extends LayoutProps{
 // root layout properties
 interface RootLayoutProps<T> extends LayoutProps{
     layoutConfig?:LayoutConfig,
-    menuData?:MenuData[],
+    menuData?:MenuData,
     theme?:Theme,
     locale?:string,
     localeMessages?:Record<string,T>,
