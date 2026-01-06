@@ -35,11 +35,11 @@ function BaseLayout(props:BaseLayoutProps){
             backgroundElement = child
         }        
     })
-  
+
     return(      
-        <>  
-        <div ref={props.ref} className={styles.rootBox} style={{...props.style}}>
-            {backgroundElement}        
+        <>         
+        <div ref={props.ref} className={styles.rootBox} style={{...props.style}}>    
+             {backgroundElement}                
             <div className={styles.rootLayout}>
                 {asideElement}
                 <div className={styles.mainLayout}>                

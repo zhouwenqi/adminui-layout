@@ -1,11 +1,12 @@
 {
   "name": "@adminui-dev/layout",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "adminui.dev's layout",
   "keywords": [
     "layout",
     "adminui",
     "admin",
+    "react-layout",
     "dashboard"
   ],
   

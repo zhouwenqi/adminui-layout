@@ -1,5 +1,5 @@
 import { createContext,useContext } from "react";
-import type { LayoutConfig,ThemeSkin, ConfigActionDispatcher,ConfigStateDispatcher } from "./typings";
+import type { LayoutConfig, ConfigActionDispatcher,ConfigStateDispatcher } from "./typings";
 
 // define config
 export function defineConfig(config:LayoutConfig):LayoutConfig {
@@ -21,8 +21,7 @@ export const defaultConfig:LayoutConfig = {
     primaryColor:"#417ffb",
 }
 
-const LayoutActionContext = createContext<ConfigActionDispatcher>({
-    setTheme:()=>{},
+const LayoutActionContext = createContext<ConfigActionDispatcher>({   
     setLayoutConfig:()=>{},
     setLocale:()=>{}
 })
@@ -30,7 +29,6 @@ const LayoutActionContext = createContext<ConfigActionDispatcher>({
 const LayoutStateContext = createContext<ConfigStateDispatcher>({
     locale:"en-US",
     languages:[],
-    theme:"system",
     layoutConfig:{},
     themeSkinMap:{"tidy":[],"rich":[]}
 })
@@ -41,5 +39,5 @@ export const useConfigState=()=> useContext(LayoutStateContext)
 export const useConfigAction=()=> useContext(LayoutActionContext)
 export const useTheme=()=>{
     const context = useConfigState()
-    return context.theme
+    return context.layoutConfig.theme
  }

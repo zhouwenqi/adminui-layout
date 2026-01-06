@@ -10,14 +10,12 @@ type AvatarPosition = "rightTop" | "leftBottom" | "none"
 type ConfigStateDispatcher = {
     layoutConfig:LayoutConfig,    
     locale:string,
-    theme:Theme,
     themeSkin?:ThemeSkin,
     themeSkinMap:Record<SkinType,ThemeSkin[]>,
     languages:Language[],
     menuDataMap?:Record<string,MenuData[]>
 }
 type ConfigActionDispatcher = {
-    setTheme:(theme:Theme)=>void,
     setLocale:(locale:string)=>void,
     setLayoutConfig:(config:LayoutConfig)=>void,
 }
