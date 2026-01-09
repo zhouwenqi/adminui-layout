@@ -135,6 +135,7 @@ interface RootLayoutProps<T> extends LayoutProps{
     theme?:Theme,
     locale?:string,
     localeMessages?:Record<string,T>,
+    disabledStorageConfig?:boolean,
     themeSkins?:ThemeSkin[]
 }
 
@@ -146,6 +147,7 @@ interface ContainerProps extends LayoutProps {
     hideTitle?:boolean,
     hideBreadcrumb?:boolean,
     hideFooter?:boolean,
+    title?:string,
     transparent?:boolean,
     children?:React.ReactNode,
 }
