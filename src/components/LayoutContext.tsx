@@ -18,6 +18,7 @@ export const defaultConfig:LayoutConfig = {
     collapsedPosition:"bottom",
     avatarPosition:"rightTop",
     theme:"system",
+    visibleBreadcrumbIcon:"none",
     primaryColor:"#417ffb",
 }
 

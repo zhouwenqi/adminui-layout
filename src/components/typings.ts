@@ -6,6 +6,7 @@ type ContainerStretch = 'inline' | 'auto' | 'fill'
 type SkinType = 'tidy' | 'rich'
 type Position = "top" | "center" | "bottom"
 type AvatarPosition = "rightTop" | "leftBottom" | "none"
+type BreadcrumbIconVisible = "none" | "first" | "all"
 
 type ConfigStateDispatcher = {
     layoutConfig:LayoutConfig,    
@@ -50,11 +51,13 @@ interface LayoutConfig  {
     asideTransparent?:boolean,
     headerTransparent?:boolean
     containerTransparent?:boolean,
+    hideAsideMenuDataEmpty?:boolean,
     asideBlur?:boolean,
     headerBlur?:boolean,
     containerBlur?:boolean,
     collapsedPosition?:Position,
     avatarPosition?:AvatarPosition,
+    visibleBreadcrumbIcon?:BreadcrumbIconVisible,
     userInfo?:UserInfo,
     brandInfo?:BrandInfo
 }
@@ -174,5 +177,6 @@ export type {
     MenuData,
     Position,
     AvatarPosition,
+    BreadcrumbIconVisible,
     OutletContainer
 }
