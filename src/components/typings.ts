@@ -7,6 +7,7 @@ type SkinType = 'tidy' | 'rich'
 type Position = "top" | "center" | "bottom"
 type AvatarPosition = "rightTop" | "leftBottom" | "none"
 type BreadcrumbIconVisible = "none" | "first" | "all"
+type MenuItemSelectColor = "default" | "primary" | "invert"
 
 type ConfigStateDispatcher = {
     layoutConfig:LayoutConfig,    
@@ -24,6 +25,7 @@ type OutletContainer = {
     title:string
     breadcrumbData:any[]
     footer?:React.ReactNode
+    toolbar?:React.ReactNode
 }
 
 // layout config
@@ -38,7 +40,10 @@ interface LayoutConfig  {
     primaryColor?:string,
     highlight?:boolean,
     flated?:boolean,
+    noneHeader?:boolean,
     menuIconSize?:number,
+    menuItemSelectColor?:MenuItemSelectColor,
+    containerMargin?:number,
     compact?:boolean,
     largeBrand?:boolean,
     splitMenu?:boolean,
@@ -123,12 +128,17 @@ interface MenuData {
     params?:Record<string,string>,
     children?:MenuData[]   
 }
+interface RootStyles {
+    root?:React.CSSProperties,
+    main?:React.CSSProperties
+}
 
 interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 // base layout properties
 interface BaseLayoutProps extends LayoutProps{
-    ref?:React.Ref<HTMLDivElement>
+    ref?:React.Ref<HTMLDivElement>,
+    styles?:RootStyles
 }
 
 // root layout properties
@@ -153,6 +163,7 @@ interface ContainerProps extends LayoutProps {
     title?:string,
     transparent?:boolean,
     children?:React.ReactNode,
+    styles?:RootStyles
 }
 
 export type {
@@ -178,5 +189,6 @@ export type {
     Position,
     AvatarPosition,
     BreadcrumbIconVisible,
+    MenuItemSelectColor,
     OutletContainer
 }

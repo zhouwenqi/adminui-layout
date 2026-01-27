@@ -58,4 +58,6 @@
     display: flex;
     flex-flow: column;  
     width: 100%;
+    min-width: 0px;
+    min-height: 100vh;
 }

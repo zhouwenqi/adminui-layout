@@ -36,13 +36,15 @@ function BaseLayout(props:BaseLayoutProps){
         }        
     })
 
+    const rootStyle = props.style || props.styles?.root   
+
     return(      
         <>         
-        <div ref={props.ref} className={styles.rootBox} style={{...props.style}}>    
+        <div ref={props.ref} className={styles.rootBox} style={rootStyle}>
              {backgroundElement}                
             <div className={styles.rootLayout}>
                 {asideElement}
-                <div className={styles.mainLayout}>                
+                <div className={styles.mainLayout} style={{...props.styles?.main}}>                
                     {headerElement}          
                     {contentElement}
                 </div>
