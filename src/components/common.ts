@@ -1,4 +1,4 @@
-import { LayoutTheme,Theme } from "./typings";
+import { LayoutTheme,Theme, ThemeSkin } from "./typings";
 
 function isWideUnicodeChar(char: string): boolean {
   if (char.length === 0) return false;
@@ -63,5 +63,9 @@ const getLayoutTheme=(theme:Theme):LayoutTheme=>{
   }   
   return theme
 }
+const defineThemeSkin=(themeSkin:ThemeSkin):ThemeSkin =>{
+  return themeSkin
+}
 
-export {getAvatarInitials,hexToRgb,hexToRgba,hexToRgbaString,getLayoutTheme}
+
+export {getAvatarInitials,hexToRgb,hexToRgba,hexToRgbaString,getLayoutTheme,defineThemeSkin}

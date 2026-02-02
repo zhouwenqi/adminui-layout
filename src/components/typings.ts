@@ -1,9 +1,11 @@
+import { JSX } from "react"
+
 type Theme = 'light' | 'dark' | 'system'
 type LayoutType = 'headMenu' | 'leftMenu'
 type LayoutTheme = 'light' | 'dark'
 type ContainerMode = 'inline' | 'box' | 'panel' 
 type ContainerStretch = 'inline' | 'auto' | 'fill'
-type SkinType = 'tidy' | 'rich'
+type SkinType = 'system' | 'custom'
 type Position = "top" | "center" | "bottom"
 type AvatarPosition = "rightTop" | "leftBottom" | "none"
 type BreadcrumbIconVisible = "none" | "first" | "all"
@@ -42,6 +44,8 @@ interface LayoutConfig  {
     flated?:boolean,
     noneHeader?:boolean,
     menuIconSize?:number,
+    menuFontSize?:number,
+    colorLink?:string,
     menuItemSelectColor?:MenuItemSelectColor,
     containerMargin?:number,
     compact?:boolean,
@@ -67,21 +71,19 @@ interface LayoutConfig  {
     brandInfo?:BrandInfo
 }
 
+type ThemeConfig = Omit<LayoutConfig,"locale"|"disabledLocale"|"skinName"|"userInfo"|"brandInfo">
+
 // skin
 interface ThemeSkin {
     name:string,
     icon?:string,
     label?:string,
-    theme:LayoutTheme[],
     skinType:SkinType,
-    backgroundContent?:React.ReactNode,    
-    asideWidth?:number,
-    primaryColor?:string,
-    asideBlur?:boolean,
-    headerBlur?:boolean,
-    containerBlur?:boolean,
+    layoutConfig?:ThemeConfig,
+    backgroundContent?:React.ReactNode,        
     layoutBorderColor?:string,
-    headerStyle?:React.CSSProperties,    
+    logo?:string | React.ReactNode,    
+    headerStyle?:React.CSSProperties,
     asideStyle?:React.CSSProperties,    
 }
 
@@ -123,6 +125,7 @@ interface MenuData {
     label?:string,
     icon?:React.ReactNode,
     path?:string,
+    layout?:boolean,
     extra?:React.ReactNode,
     originalPath?:string,
     params?:Record<string,string>,
@@ -190,5 +193,6 @@ export type {
     AvatarPosition,
     BreadcrumbIconVisible,
     MenuItemSelectColor,
+    ThemeConfig,
     OutletContainer
 }

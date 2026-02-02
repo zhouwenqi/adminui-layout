@@ -31,7 +31,7 @@ const LayoutStateContext = createContext<ConfigStateDispatcher>({
     locale:"en-US",
     languages:[],
     layoutConfig:{},
-    themeSkinMap:{"tidy":[],"rich":[]}
+    themeSkinMap:{"system":[],"custom":[]}
 })
 
 export const createConfigActionContext = () => LayoutActionContext
