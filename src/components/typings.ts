@@ -151,7 +151,7 @@ interface ThemeSkin {
     layoutConfig?:ThemeConfig,
     backgroundColor?:string,
     backgroundContent?:React.ReactNode,        
-    layoutBorderColor?:string,
+    antdToken?:any,
     logo?:string | React.ReactNode,    
     headerStyle?:React.CSSProperties,
     asideStyle?:React.CSSProperties,    
